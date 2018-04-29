@@ -12,7 +12,6 @@
     "css-to-js",
     "@babel/transform-runtime",
     ["@babel/plugin-proposal-object-rest-spread"],
-    "babel-plugin-rxjs",
     ["module-resolver", {
       "root": ["./src"],
       "alias": {
@@ -21,7 +20,8 @@
     }],
     ["lodash", {
       "id": ["ramda", "ramda-adjunct", "recompose"]
-    }]
+    }],
+    ["direct-import", { "modules": ["material-ui"] }]
   ],
   "env": {
     "development": {

@@ -15,10 +15,6 @@ module.exports = {
   },
   globals: {
     localStorage: true,
-    chrome: true,
-    CHROME_EXTENSION_OAUTH_UID: true,
-    CHROME_EXTENSION_OAUTH_SECRET: true,
-    css: true,
   },
   rules: {
     // style

@@ -1,5 +1,7 @@
 import React from 'react'
 
-const Root = () => <div>hello</div>
+import App from 'containers/App'
+
+const Root = () => <App />
 
 export default Root

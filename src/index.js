@@ -6,6 +6,6 @@ import Root from './containers/Root'
 
 import './index.scss'
 
-const Root_ = hot(module)(Root)
+const HotRoot = hot(module)(Root)
 
-ReactDOM.render(<Root_ />, document.getElementById('root'))
+ReactDOM.render(<HotRoot />, document.getElementById('root'))
