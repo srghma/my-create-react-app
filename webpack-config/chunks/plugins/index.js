@@ -4,4 +4,6 @@ import dev from './dev'
 import prod from './prod'
 import common from './common'
 
-module.exports = [...common, ...env(dev, prod)]
+const plugins = [...common, ...env(dev, prod)]
+
+export default plugins

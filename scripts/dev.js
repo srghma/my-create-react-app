@@ -1,6 +1,7 @@
 const debounce = require('lodash.debounce')
 const { exec } = require('shelljs')
-const chokidar = require('chokidar')
+const { watch } = require('chokidar')
+const ON_DEATH = require('death')
 
 const watched = [
   'webpack-config/**/*',
@@ -9,15 +10,30 @@ const watched = [
 ]
 
 function runCmd() {
-  const cmd = 'NODE_ENV="development" webpack-dev-server --color --progress --config webpack-config/webpack.config.babel.js'
+  const cmd = 'NODE_ENV="development" webpack-dev-server --host 0.0.0.0 --port 3010 --color --progress --config webpack-config/webpack.config.babel.js'
   return exec(cmd, { async: true })
 }
 
-let child = runCmd()
+let child = null
+
 const restart = () => {
-  child.kill()
-  console.log('> Killed webpack-dev-server\n')
+  if (child) {
+    child.kill()
+    console.log('> Killed webpack-dev-server\n')
+  }
+
   child = runCmd()
 }
 
-chokidar.watch(watched).on('all', debounce(restart, 500))
+watch(watched).on('all', debounce(restart, 500))
+
+ON_DEATH(() => {
+  console.log('\n> Exiting')
+
+  if (child) {
+    child.kill()
+    console.log('> Killed webpack-dev-server, bye')
+  }
+
+  process.exit()
+})

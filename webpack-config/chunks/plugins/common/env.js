@@ -1,10 +1,12 @@
-import webpack from "webpack"
-import { envVars } from "webpack-config/lib"
+import * as R from 'ramda'
+import webpack from 'webpack'
 
-const envVars_ = envVars(["WEBPACK_DEV_SERVER_PORT"])
+const envVars = names => R.map(JSON.stringify, R.props(names, process.env))
+
+const envVars_ = envVars(['NODE_ENV'])
 
 export default [
   new webpack.DefinePlugin({
-    "process.env": envVars_
-  })
+    'process.env': envVars_,
+  }),
 ]

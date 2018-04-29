@@ -1,32 +1,25 @@
 import { join } from 'path'
 
+import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
+
 import './loadDotenv'
 import { outputDir, env, root } from './lib'
 import module_ from './chunks/module'
 import plugins from './chunks/plugins'
 
-const devEntries = [
-  'react-hot-loader/patch',
-]
+process.traceDeprecation = true;
 
-const prodEntries = []
-
-const sharedEntries = env(devEntries, prodEntries)
-
+// https://thebrainfiles.wearebrain.com/moving-from-webpack-3-to-webpack-4-f8cdacd290f9
 const config = {
-  devtool: env('inline-source-map', false),
-  entry:   [...sharedEntries, join(root, 'src')],
+  mode:    env('development', 'production'),
+  entry: [
+    'babel-polyfill',
+    join(root, 'src')
+  ],
   output: {
-    path:          outputDir,
-    filename:      '[name].js',
-    chunkFilename: '[id].chunk.js',
-  },
-  devServer: {
-    host:        '0.0.0.0',
-    hot:         true,
-    contentBase: outputDir,
-    compress:    true,
-    port:        process.env.WEBPACK_DEV_SERVER_PORT,
+    path: outputDir,
+    publicPath: '/',
+    filename: 'bundle.js',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
@@ -34,7 +27,5 @@ const config = {
   module: module_,
   plugins,
 }
-
-// console.log(config)
 
 export default config
