@@ -1,6 +1,5 @@
 import { join } from 'path'
 
-import './loadDotenv'
 import { outputDir, env, root } from './lib'
 import module_ from './chunks/module'
 import plugins from './chunks/plugins'

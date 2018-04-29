@@ -1,11 +1,11 @@
 {
   "name": "extension",
   "version": "0.0.1",
-  "description": "its like lingualeo extension, but better",
-  "extension-name": "Lingualeo 2 anki",
+  "description": "",
+  "extension-name": "",
   "repository": {
     "type": "git",
-    "url": "https://github.com/srghma/ll2a"
+    "url": "https://github.com/srghma/none"
   },
   "scripts": {
     "dev": "node scripts/dev",
@@ -29,7 +29,7 @@
       "git add"
     ]
   },
-  "author": "Sergey Homa <melgaardbjorn@gmail.com>",
+  "author": "Sergey Homa <srghma@gmail.com>",
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.33",
     "@babel/plugin-external-helpers": "^7.0.0-beta.34",

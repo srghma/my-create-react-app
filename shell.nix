@@ -5,8 +5,29 @@ with lib;
 
 
 let
-  nodejs = nodejs-9_x;
+  nodejs = nodejs-8_x;
+  nodePackages = nodePackages_8_x;
 
-  node-composition = callPackage ./nix/node-composition.nix { inherit pkgs nodejs; };
+  nodeComposition = callPackage ./nix/node-composition.nix { inherit pkgs nodejs; };
+  nodeDependencies = nodeComposition.shell.nodeDependencies;
 in
-node-composition.shell
+
+stdenv.mkDerivation {
+  name = "foo";
+
+  buildInputs = [
+    stdenv
+    gnumake
+    git
+
+    # Node deps
+    nodejs
+    nodePackages_6_x.node2nix
+  ];
+
+  shellHook = ''
+      export WEBPACK_DEV_SERVER_PORT=3010
+      export NODE_PATH=${nodeDependencies}/lib/node_modules
+      export PATH="$PWD/node_modules/.bin/:$PATH"
+  '';
+}
