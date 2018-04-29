@@ -13,7 +13,7 @@ const prodEntries = []
 
 const sharedEntries = env(devEntries, prodEntries)
 
-export default {
+const config = {
   devtool: env('inline-source-map', false),
   entry:   [...sharedEntries, join(root, 'src')],
   output: {
@@ -22,6 +22,7 @@ export default {
     chunkFilename: '[id].chunk.js',
   },
   devServer: {
+    host:        '0.0.0.0',
     hot:         true,
     contentBase: outputDir,
     compress:    true,
@@ -33,3 +34,7 @@ export default {
   module: module_,
   plugins,
 }
+
+// console.log(config)
+
+export default config

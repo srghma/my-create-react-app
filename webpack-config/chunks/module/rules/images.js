@@ -1,4 +1,4 @@
-import { env } from '~/webpack/lib'
+import { env } from 'webpack-config/lib'
 
 export default [
   {

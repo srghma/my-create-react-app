@@ -1,7 +1,7 @@
 import { join } from 'path'
 
-import { root } from '~/webpack/lib'
-import extractSass from '~/webpack/extractSass'
+import { root } from 'webpack-config/lib'
+import extractSass from 'webpack-config/extractSass'
 
 export default [
   {

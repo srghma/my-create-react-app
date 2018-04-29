@@ -1,14 +1,15 @@
 const debounce = require('lodash.debounce')
 const { exec } = require('shelljs')
-const chokidar = require('chokidar');
+const chokidar = require('chokidar')
 
 const watched = [
-  'webpack/**/*',
-  '.env.dev',
+  'webpack-config/**/*',
+  '.env.*',
+  '.babelrc',
 ]
 
 function runCmd() {
-  const cmd = 'NODE_ENV="development" webpack-dev-server --color --progress --config webpack/webpack.config.babel.js'
+  const cmd = 'NODE_ENV="development" webpack-dev-server --color --progress --config webpack-config/webpack.config.babel.js'
   return exec(cmd, { async: true })
 }
 
@@ -19,4 +20,4 @@ const restart = () => {
   child = runCmd()
 }
 
-chokidar.watch(watched).on('all', debounce(restart, 500));
+chokidar.watch(watched).on('all', debounce(restart, 500))

@@ -13,8 +13,11 @@
     "@babel/transform-runtime",
     ["@babel/plugin-proposal-object-rest-spread"],
     "babel-plugin-rxjs",
-    ["babel-plugin-root-import", {
-      "rootPathSuffix": "."
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "webpack-config": "./webpack-config"
+      }
     }],
     ["lodash", {
       "id": ["ramda", "ramda-adjunct", "recompose"]
