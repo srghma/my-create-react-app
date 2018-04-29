@@ -10,7 +10,7 @@ const watched = [
 ]
 
 function runCmd() {
-  const cmd = 'NODE_ENV="development" webpack-dev-server --host 0.0.0.0 --port 3010 --color --progress --config webpack-config/webpack.config.babel.js'
+  const cmd = 'NODE_ENV="development" webpack-dev-server --host 0.0.0.0 --port 3010 --hot --color --progress --config webpack-config/webpack.config.babel.js'
   return exec(cmd, { async: true })
 }
 
