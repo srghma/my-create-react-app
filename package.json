@@ -1,5 +1,5 @@
 {
-  "name": "@ll2a/extension",
+  "name": "extension",
   "version": "0.0.1",
   "description": "its like lingualeo extension, but better",
   "extension-name": "Lingualeo 2 anki",

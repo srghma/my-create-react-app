@@ -601,8 +601,8 @@ let
     };
   };
   args = {
-    name = "_at_ll2a_slash_extension";
-    packageName = "@ll2a/extension";
+    name = "extension";
+    packageName = "extension";
     version = "0.0.1";
     src = ./..;
     dependencies = [
