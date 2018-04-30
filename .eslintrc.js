@@ -15,6 +15,7 @@ module.exports = {
   },
   globals: {
     localStorage: true,
+    css: true,
   },
   rules: {
     // style

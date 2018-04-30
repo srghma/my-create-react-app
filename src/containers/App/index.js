@@ -28,13 +28,48 @@ const switchSelected = R.over(R.lensProp('selected'), R.not)
 const enhance = R.compose(
   wrapWithComponent(Wrapper),
   RE.withState('options', 'setOptions', optionWithState),
+  RE.withState('empty', 'setEmpty', true),
+  RE.withState('invalid', 'setInvalid', false),
+  RE.withState('result', 'setResult', null),
   RE.withHandlers({
-    selectOption: ({ setOptions, options }) => event => {
+    selectOption: ({
+      setOptions,
+      setInvalid,
+      setEmpty,
+      setResult,
+      options,
+    }) => event => {
+      // update selections
       const id = event.target.value
 
       const options_ = R.over(lensId(id), switchSelected, options)
 
       setOptions(options_)
+
+      // calculate result
+      const selectedIfs = R.pipe(
+        R.filter(R.propEq('selected', true)),
+        R.map(R.prop('name')),
+      )(options_)
+
+      const then = R.pipe(
+        R.find(
+          R.pipe(
+            R.prop('if'),
+            R.equals(selectedIfs),
+          )
+        ),
+        R.prop('then')
+      )(config)
+
+      if (then) {
+        setInvalid(false)
+        setEmpty(false)
+        setResult(then)
+      } else {
+        setInvalid(true)
+        setEmpty(false)
+      }
     },
   }),
 )

@@ -1,9 +1,13 @@
 import * as R from 'ramda'
-import { withStyles } from 'material-ui'
+import * as RE from 'recompose'
 
-import presentation from './presentation'
-import styles from './styles'
+import Default from './default'
+import Invalid from './invalid'
+import Empty from './empty'
 
-const enhance = R.compose(withStyles(styles))
+const enhance = R.compose(
+  RE.branch(R.prop('empty'), RE.renderComponent(Empty)),
+  RE.branch(R.prop('invalid'), RE.renderComponent(Invalid)),
+)
 
-export default enhance(presentation)
+export default enhance(Default)

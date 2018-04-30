@@ -7,15 +7,17 @@ import Result          from 'components/Result'
 const App = ({
   classes,
   options,
+  empty,
+  invalid,
   result,
-  selectOption
+  selectOption,
 }) => (
   <Grid container>
     <Grid item xs={6}>
       <PossibleOptions options={options} handleSelect={selectOption} />
     </Grid>
     <Grid item xs={6}>
-      <Result result={result} />
+      <Result result={result} empty={empty} invalid={invalid}/>
     </Grid>
   </Grid>
 )

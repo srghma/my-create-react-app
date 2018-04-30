@@ -1,7 +1,9 @@
+import * as R from 'ramda'
 import { withStyles } from 'material-ui'
-import styles from './styles'
-import presentation from './presentation'
 
-const enhance = withStyles(styles)
+import presentation from './presentation'
+import styles from './styles'
+
+const enhance = R.compose(withStyles(styles))
 
 export default enhance(presentation)
