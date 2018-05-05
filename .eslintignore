@@ -11,4 +11,4 @@ dev/
 *.crx
 *.pem
 update.xml
-doc/
+docs/

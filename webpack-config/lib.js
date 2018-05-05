@@ -9,4 +9,4 @@ export function env(tmthDev, tmthProd) {
 
 export const root = resolve(__dirname, '..')
 
-export const outputDir = join(root, 'doc')
+export const outputDir = join(root, 'docs')
