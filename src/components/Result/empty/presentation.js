@@ -1,10 +1,15 @@
 import React from 'react'
-import { Typography } from 'material-ui'
+import { Icon, Grid, Typography } from 'material-ui'
 
-const Empty = () => (
-  <Typography gutterBottom align="center">
-    Виберіть три предмети, з яких Ви маєте сертифікати ЗНО
-  </Typography>
+const Empty = ({ classes }) => (
+  <Grid container justify="center" alignItems="center" direction="column" className={classes.container}>
+    <Icon color="primary" style={{ fontSize: 100 }}>
+      info
+    </Icon>
+    <Typography variant="headline" color="textSecondary" gutterBottom align="center">
+      Виберіть три предмети, з яких Ви маєте сертифікати ЗНО
+    </Typography>
+  </Grid>
 )
 
 export default Empty

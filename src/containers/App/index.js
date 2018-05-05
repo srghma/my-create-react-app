@@ -21,6 +21,8 @@ const lensId = id => R.lens(
   },
 )
 
+const filterSelected = R.filter(R.propEq('selected', true))
+
 const switchSelected = R.over(R.lensProp('selected'), R.not)
 
 // enhance
@@ -44,11 +46,16 @@ const enhance = R.compose(
 
       const options_ = R.over(lensId(id), switchSelected, options)
 
+      // force return if occurs that more then 4 selected
+      if (filterSelected(options_).length > 4) {
+        return
+      }
+
       setOptions(options_)
 
       // calculate result
       const selectedIfs = R.pipe(
-        R.filter(R.propEq('selected', true)),
+        filterSelected,
         R.map(R.prop('name')),
       )(options_)
 
@@ -67,8 +74,13 @@ const enhance = R.compose(
         setEmpty(false)
         setResult(then)
       } else {
-        setInvalid(true)
-        setEmpty(false)
+        if (selectedIfs.length == 0) {
+          setInvalid(false)
+          setEmpty(true)
+        } else {
+          setInvalid(true)
+          setEmpty(false)
+        }
       }
     },
   }),

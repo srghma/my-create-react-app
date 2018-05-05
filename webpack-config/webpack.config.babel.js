@@ -11,13 +11,16 @@ process.traceDeprecation = true
 
 // https://thebrainfiles.wearebrain.com/moving-from-webpack-3-to-webpack-4-f8cdacd290f9
 const config = {
-  // mode:   env('development', 'production'),
-  mode:   'development',
+  mode:   env('development', 'production'),
   entry:  ['babel-polyfill', join(root, 'src')],
   output: {
     path:       outputDir,
-    // publicPath: '/',
-    publicPath: '/my-create-react-app/', // becuase its published on https://srghma.github.io/my-create-react-app/
+    publicPath: env(
+      '/',
+
+      // becuase its published on https://srghma.github.io/my-create-react-app/
+      '/my-create-react-app/'
+    ),
     filename:   'bundle.js',
   },
   resolve: {
