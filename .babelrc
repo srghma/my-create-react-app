@@ -19,7 +19,7 @@
       }
     }],
     ["lodash", {
-      "id": ["ramda", "ramda-adjunct", "recompose"]
+      "id": ["ramda", "ramda-adjunct", "recompose", "srghma-react-helpers"]
     }],
     ["direct-import", { "modules": ["material-ui"] }]
   ],
