@@ -16,7 +16,8 @@ const config = {
   entry:  ['babel-polyfill', join(root, 'src')],
   output: {
     path:       outputDir,
-    publicPath: '/',
+    // publicPath: '/',
+    publicPath: '/my-create-react-app/', // becuase its published on https://srghma.github.io/my-create-react-app/
     filename:   'bundle.js',
   },
   resolve: {
