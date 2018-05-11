@@ -7,8 +7,18 @@ import Wrapper from './wrapper'
 
 import config from './config'
 
+// ifs and thens are sorded
+const sortedConfig = R.map(
+  (configItem) => ({
+    if:   R.sortBy(R.toLower, configItem.if),
+    then: R.sortBy(R.toLower, configItem.then)
+  }),
+  config
+)
+
+// console.log(sortedConfig)
 // config
-const ifs = R.pipe(R.chain(R.prop('if')), R.uniq)(config)
+const ifs = R.pipe(R.chain(R.prop('if')), R.uniq)(sortedConfig)
 const optionWithState = mapIndexed((name, id) => ({ id: id.toString(), name, selected: false }), ifs)
 
 // utils
@@ -43,8 +53,11 @@ const enhance = R.compose(
     }) => event => {
       // update selections
       const id = event.target.value
+      // console.log('id', id)
+      // console.log('options', options)
 
       const options_ = R.over(lensId(id), switchSelected, options)
+      // console.log('options_', options_)
 
       // force return if occurs that more then 4 selected
       if (filterSelected(options_).length > 4) {
@@ -59,6 +72,8 @@ const enhance = R.compose(
         R.map(R.prop('name')),
       )(options_)
 
+      // console.log('selectedIfs', selectedIfs)
+
       const then = R.pipe(
         R.find(
           R.pipe(
@@ -67,7 +82,7 @@ const enhance = R.compose(
           )
         ),
         R.prop('then')
-      )(config)
+      )(sortedConfig)
 
       if (then) {
         setInvalid(false)
