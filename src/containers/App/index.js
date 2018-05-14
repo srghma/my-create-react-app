@@ -1,45 +1,17 @@
 import * as R from 'ramda'
 import * as RE from 'recompose'
-import { wrapWithComponent, mapIndexed } from 'srghma-react-helpers'
+import { wrapWithComponent } from 'srghma-react-helpers'
+// import { trace } from 'ramda-universal-trace'
+
+import { lensId, filterSelected, switchSelected } from './utils'
+import { stateOfCheckboxOptions, normalizedConfig } from './normalizedConfig'
 
 import Default from './default'
 import Wrapper from './wrapper'
 
-import config from './config'
-
-// ifs and thens are sorded
-const sortedConfig = R.map(
-  (configItem) => ({
-    if:   R.sortBy(R.toLower, configItem.if),
-    then: R.sortBy(R.toLower, configItem.then)
-  }),
-  config
-)
-
-// console.log(sortedConfig)
-// config
-const ifs = R.pipe(R.chain(R.prop('if')), R.uniq)(sortedConfig)
-const optionWithState = mapIndexed((name, id) => ({ id: id.toString(), name, selected: false }), ifs)
-
-// utils
-const lensId = id => R.lens(
-  R.find(R.propEq('id', id)),
-  (tmthNew, listOfObjsWithId) => {
-    const index = R.findIndex(R.propEq('id', id), listOfObjsWithId)
-
-    return R.update(index, tmthNew, listOfObjsWithId)
-  },
-)
-
-const filterSelected = R.filter(R.propEq('selected', true))
-
-const switchSelected = R.over(R.lensProp('selected'), R.not)
-
-// enhance
-
 const enhance = R.compose(
   wrapWithComponent(Wrapper),
-  RE.withState('options', 'setOptions', optionWithState),
+  RE.withState('options', 'setOptions', stateOfCheckboxOptions),
   RE.withState('empty', 'setEmpty', true),
   RE.withState('invalid', 'setInvalid', false),
   RE.withState('result', 'setResult', null),
@@ -67,29 +39,41 @@ const enhance = R.compose(
       setOptions(options_)
 
       // calculate result
-      const selectedIfs = R.pipe(
+      const selectedIfsIds = R.pipe(
         filterSelected,
-        R.map(R.prop('name')),
+        R.map(R.prop('id')),
       )(options_)
 
-      // console.log('selectedIfs', selectedIfs)
+      // console.log('selectedIfsIds', selectedIfsIds)
 
       const then = R.pipe(
         R.find(
           R.pipe(
-            R.prop('if'),
-            R.equals(selectedIfs),
-          )
+            // ids of normalizedConfig
+            R.pipe(
+              R.prop('if'),
+              R.map(R.prop('id'))
+            ),
+
+            // TODO: sortStrings - to ramda-adjunct
+            // trace('asdf'),
+            R.sort((a, b) => {
+              return a.localeCompare(b)
+            }),
+            // trace('asdf2'),
+            R.equals(selectedIfsIds),
+          ),
         ),
         R.prop('then')
-      )(sortedConfig)
+      )(normalizedConfig)
+      // console.log(then)
 
       if (then) {
         setInvalid(false)
         setEmpty(false)
         setResult(then)
       } else {
-        if (selectedIfs.length == 0) {
+        if (selectedIfsIds.length == 0) {
           setInvalid(false)
           setEmpty(true)
         } else {

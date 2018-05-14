@@ -1,4 +1,4 @@
-const config = [
+export default [
   {
     if:   ['УКРАЇНСЬКА МОВА ТА ЛІТЕРАТУРА', 'МАТЕМАТИКА', 'ІНОЗЕМНА МОВА'],
     then: [
@@ -86,5 +86,3 @@ const config = [
     then: ['ПСИХОЛОГІЯ'],
   },
 ]
-
-export default config

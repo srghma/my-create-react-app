@@ -12,7 +12,7 @@ const PossibleOptions = ({ classes, options, handleSelect }) => (
   <FormControl>
     <FormGroup>
       {R.map(
-        ({ id, name, selected }) => (
+        ({ id, value, selected }) => (
           <FormControlLabel
             key={id}
             control={
@@ -22,7 +22,7 @@ const PossibleOptions = ({ classes, options, handleSelect }) => (
                 value={id}
               />
             }
-            label={name}
+            label={value}
           />
         ),
         options,
