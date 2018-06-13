@@ -2,87 +2,115 @@ export default [
   {
     if:   ['УКРАЇНСЬКА МОВА ТА ЛІТЕРАТУРА', 'МАТЕМАТИКА', 'ІНОЗЕМНА МОВА'],
     then: [
-      'ФІНАНСИ,БАНКІВСЬКА СПРАВА ТА СТРАХУВАННЯ',
-      'ЕКОНОМІКА',
-      'ПІДПРИЄМНИЦТВО, ТОРГІВЛЯ ТА БІРЖОВА ДІЯЛЬНІСТЬ',
-      'ОБЛІК І ОПОДАТКУВАННЯ',
-      'МЕНЕДЖМЕНТ',
-      'МАРКЕТИНГ',
-      'МІЖНАРОДНІ ЕКОНОМІЧНІ ВІДНОСИНИ',
-      'ТУРИЗМ',
-      'КОМП’ЮТЕРНІ НАУКИ',
-      'КІБЕРБЕЗПЕКА',
-      'ТРАНСПОРТНІ ТЕХНОЛОГІЇ (АВТОМОБІЛЬНИЙ ТРАНСПОРТ)',
-      'ПРИКЛАДНА МАТЕМАТИКА',
-      'МІЖНАРОДНІ ЕКОНОМІЧНІ ВІДНОСИНИ',
-      'ТУРИЗМ',
-      'МІЖНАРОДНЕ ПРАВО',
-      'МІЖНАРОДНІ ВІДНОСИНИ, СУСПІЛЬНІ КОМУНІКАЦІЇ ТА РЕГІОНАЛЬНІ СТУДІЇ',
-      'ПУБЛІЧНЕ УПРАВЛІННЯ ТА АДМІНІСТРУВАННЯ',
+      {value: 'ФІНАНСИ,БАНКІВСЬКА СПРАВА ТА СТРАХУВАННЯ', excluding_contract: false },
+      {value: 'ЕКОНОМІКА', excluding_contract: false },
+      {value: 'ПІДПРИЄМНИЦТВО, ТОРГІВЛЯ ТА БІРЖОВА ДІЯЛЬНІСТЬ', excluding_contract: false },
+      {value: 'ОБЛІК І ОПОДАТКУВАННЯ', excluding_contract: false },
+      {value: 'МЕНЕДЖМЕНТ', excluding_contract: false },
+      {value: 'МАРКЕТИНГ', excluding_contract: false },
+      {value: 'МІЖНАРОДНІ ЕКОНОМІЧНІ ВІДНОСИНИ', excluding_contract: false },
+      {value: 'ТУРИЗМ', excluding_contract: false },
+      {value: 'КОМП’ЮТЕРНІ НАУКИ', excluding_contract: false },
+      {value: 'КІБЕРБЕЗПЕКА', excluding_contract: false },
+      {value: 'ТРАНСПОРТНІ ТЕХНОЛОГІЇ (АВТОМОБІЛЬНИЙ ТРАНСПОРТ)', excluding_contract: false },
+      {value: 'ПРИКЛАДНА МАТЕМАТИКА', excluding_contract: false },
+      {value: 'МІЖНАРОДНІ ЕКОНОМІЧНІ ВІДНОСИНИ', excluding_contract: false },
+      {value: 'ТУРИЗМ', excluding_contract: false },
+      {value: 'МІЖНАРОДНЕ ПРАВО', excluding_contract: false },
+      {value: 'МІЖНАРОДНІ ВІДНОСИНИ, СУСПІЛЬНІ КОМУНІКАЦІЇ ТА РЕГІОНАЛЬНІ СТУДІЇ', excluding_contract: false },
+      {value: 'ПУБЛІЧНЕ УПРАВЛІННЯ ТА АДМІНІСТРУВАННЯ', excluding_contract: false },
     ],
   },
 
   {
     if:   ['УКРАЇНСЬКА МОВА ТА ЛІТЕРАТУРА', 'МАТЕМАТИКА', 'ГЕОГРАФІЯ'],
     then: [
-      'ФІНАНСИ,БАНКІВСЬКА СПРАВА ТА СТРАХУВАННЯ',
-      'ЕКОНОМІКА',
-      'ПІДПРИЄМНИЦТВО, ТОРГІВЛЯ ТА БІРЖОВА ДІЯЛЬНІСТЬ',
-      'ОБЛІК І ОПОДАТКУВАННЯ',
-      'МЕНЕДЖМЕНТ',
-      'МАРКЕТИНГ',
+      {value: 'ФІНАНСИ,БАНКІВСЬКА СПРАВА ТА СТРАХУВАННЯ', excluding_contract: false },
+      {value: 'ЕКОНОМІКА', excluding_contract: false },
+      {value: 'ПІДПРИЄМНИЦТВО, ТОРГІВЛЯ ТА БІРЖОВА ДІЯЛЬНІСТЬ', excluding_contract: false },
+      {value: 'ОБЛІК І ОПОДАТКУВАННЯ', excluding_contract: false },
+      {value: 'МЕНЕДЖМЕНТ', excluding_contract: false },
+      {value: 'МАРКЕТИНГ', excluding_contract: false },
     ],
   },
 
   {
     if:   ['УКРАЇНСЬКА МОВА ТА ЛІТЕРАТУРА', 'МАТЕМАТИКА', 'ФІЗИКА'],
     then: [
-      'КОМП’ЮТЕРНІ НАУКИ',
-      'КІБЕРБЕЗПЕКА',
-      'ТРАНСПОРТНІ ТЕХНОЛОГІЇ (АВТОМОБІЛЬНИЙ ТРАНСПОРТ)',
-      'ПРИКЛАДНА МАТЕМАТИКА',
+      {value: 'КОМП’ЮТЕРНІ НАУКИ', excluding_contract: false },
+      {value: 'КІБЕРБЕЗПЕКА', excluding_contract: false },
+      {value: 'ТРАНСПОРТНІ ТЕХНОЛОГІЇ (АВТОМОБІЛЬНИЙ ТРАНСПОРТ)', excluding_contract: false },
+      {value: 'ПРИКЛАДНА МАТЕМАТИКА', excluding_contract: false },
     ],
   },
 
   {
     if:   ['УКРАЇНСЬКА МОВА ТА ЛІТЕРАТУРА', 'ІСТОРІЯ УКРАЇНИ', 'МАТЕМАТИКА'],
     then: [
-      'ПРАВО',
-      'ЖУРНАЛІСТИКА',
-      'СОЦІАЛЬНЕ ЗАБЕЗПЕЧЕННЯ',
-      'ПУБЛІЧНЕ УПРАВЛІННЯ ТА АДМІНІСТРУВАННЯ',
+      {value: 'ПРАВО', excluding_contract: false },
+      {value: 'ЖУРНАЛІСТИКА', excluding_contract: false },
+      {value: 'СОЦІАЛЬНЕ ЗАБЕЗПЕЧЕННЯ', excluding_contract: false },
+      {value: 'ПУБЛІЧНЕ УПРАВЛІННЯ ТА АДМІНІСТРУВАННЯ', excluding_contract: false },
     ],
   },
 
   {
     if:   ['УКРАЇНСЬКА МОВА ТА ЛІТЕРАТУРА', 'ІНОЗЕМНА МОВА', 'ГЕОГРАФІЯ'],
-    then: ['МІЖНАРОДНІ ЕКОНОМІЧНІ ВІДНОСИНИ', 'ТУРИЗМ', 'ФІЛОЛОГІЯ'],
+    then: [
+      {value: 'МІЖНАРОДНІ ЕКОНОМІЧНІ ВІДНОСИНИ', excluding_contract: false },
+      {value: 'ТУРИЗМ', excluding_contract: false },
+      {value: 'ФІЛОЛОГІЯ', excluding_contract: false },
+
+      {value: 'СОЦІАЛЬНЕ ЗАБЕЗПЕЧЕННЯ', excluding_contract: true},
+    ],
   },
 
   {
     if:   ['УКРАЇНСЬКА МОВА ТА ЛІТЕРАТУРА', 'ІСТОРІЯ УКРАЇНИ', 'ІНОЗЕМНА МОВА'],
     then: [
-      'ПРАВО',
-      'ЖУРНАЛІСТИКА',
-      'МІЖНАРОДНЕ ПРАВО',
-      'МІЖНАРОДНІ ВІДНОСИНИ СУСПІЛЬНІ',
-      'МІЖНАРОДНІ ВІДНОСИНИ, СУСПІЛЬНІ КОМУНІКАЦІЇ ТА РЕГІОНАЛЬНІ СТУДІЇ',
-      'ФІЛОЛОГІЯ',
+      {value: 'ПРАВО', excluding_contract: false },
+      {value: 'ЖУРНАЛІСТИКА', excluding_contract: false },
+      {value: 'МІЖНАРОДНЕ ПРАВО', excluding_contract: false },
+      {value: 'МІЖНАРОДНІ ВІДНОСИНИ СУСПІЛЬНІ', excluding_contract: false },
+      {value: 'МІЖНАРОДНІ ВІДНОСИНИ, СУСПІЛЬНІ КОМУНІКАЦІЇ ТА РЕГІОНАЛЬНІ СТУДІЇ', excluding_contract: false },
+      {value: 'ФІЛОЛОГІЯ', excluding_contract: false },
+
+      {value: 'ЕКОНОМІКА', excluding_contract: true},
+      {value: 'ФІНАНСИ,БАНКІВСЬКА СПРАВА ТА СТРАХУВАННЯ', excluding_contract: true},
+      {value: 'ПІДПРИЄМНИЦТВО, ТОРГІВЛЯ ТА БІРЖОВА  ДІЯЛЬНІСТЬ', excluding_contract: true},
+      {value: 'СОЦІАЛЬНЕ ЗАБЕЗПЕЧЕННЯ', excluding_contract: true},
+      {value: 'ТУРИЗМ', excluding_contract: true},
+      {value: 'МЕНЕДЖМЕНТ', excluding_contract: true},
+      {value: 'ОБЛІК І ОПОДАТКУВАННЯ', excluding_contract: true},
     ],
   },
 
   {
     if:   ['УКРАЇНСЬКА МОВА ТА ЛІТЕРАТУРА', 'ІСТОРІЯ УКРАЇНИ', 'ГЕОГРАФІЯ'],
-    then: ['СОЦІАЛЬНЕ ЗАБЕЗПЕЧЕННЯ'],
+    then: [
+      {value: 'СОЦІАЛЬНЕ ЗАБЕЗПЕЧЕННЯ', excluding_contract: false },
+
+      {value: 'ЕКОНОМІКА', excluding_contract: true},
+      {value: 'ФІНАНСИ,БАНКІВСЬКА СПРАВА ТА СТРАХУВАННЯ', excluding_contract: true},
+      {value: 'ПІДПРИЄМНИЦТВО, ТОРГІВЛЯ ТА БІРЖОВА  ДІЯЛЬНІСТЬ', excluding_contract: true},
+      {value: 'ТУРИЗМ', excluding_contract: true},
+      {value: 'МЕНЕДЖМЕНТ', excluding_contract: true},
+      {value: 'ОБЛІК І ОПОДАТКУВАННЯ', excluding_contract: true},
+    ],
   },
 
   {
     if:   ['УКРАЇНСЬКА МОВА ТА ЛІТЕРАТУРА', 'БІОЛОГІЯ', 'МАТЕМАТИКА'],
-    then: ['ПСИХОЛОГІЯ'],
+    then: [
+      {value: 'ПСИХОЛОГІЯ', excluding_contract: false }
+    ],
   },
 
   {
     if:   ['УКРАЇНСЬКА МОВА ТА ЛІТЕРАТУРА', 'БІОЛОГІЯ', 'ІНОЗЕМНА МОВА'],
-    then: ['ПСИХОЛОГІЯ'],
+    then: [
+      {value: 'ПСИХОЛОГІЯ', excluding_contract: false }
+    ],
   },
+
 ]
