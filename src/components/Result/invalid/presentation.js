@@ -3,7 +3,13 @@ import React from 'react'
 import { Icon, Grid, Typography } from 'material-ui'
 
 const Invalid = ({ classes }) => (
-  <Grid container justify="center" alignItems="center" direction="column" className={classes.container}>
+  <Grid
+    container
+    justify="center"
+    alignItems="center"
+    direction="column"
+    className={classes.container}
+  >
     <Icon color="error" style={{ fontSize: 100 }}>
       error_outline
     </Icon>

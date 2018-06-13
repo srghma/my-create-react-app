@@ -1,8 +1,6 @@
 import React from 'react'
 
-const PossibleOptions = ({
-  classes
-}) => (
+const PossibleOptions = ({ classes }) => (
   <div>
     <input type="checkbox" value="0" />
     <label>Some</label>

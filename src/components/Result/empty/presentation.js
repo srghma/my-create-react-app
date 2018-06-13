@@ -2,7 +2,13 @@ import React from 'react'
 import { Icon, Grid, Typography } from 'material-ui'
 
 const Empty = ({ classes }) => (
-  <Grid container justify="center" alignItems="center" direction="column" className={classes.container}>
+  <Grid
+    container
+    justify="center"
+    alignItems="center"
+    direction="column"
+    className={classes.container}
+  >
     <Icon color="primary" style={{ fontSize: 100 }}>
       info
     </Icon>

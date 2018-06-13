@@ -5,7 +5,10 @@ import { assertNotNil } from 'ramda-asserters'
 import config from './config'
 
 // [String]
-const possibleIfs = R.pipe(R.chain(R.prop('if')), R.uniq)(config)
+const possibleIfs = R.pipe(
+  R.chain(R.prop('if')),
+  R.uniq,
+)(config)
 // console.log(possibleIfs)
 
 // [{ id: String, value: String }]
@@ -20,11 +23,11 @@ export const normalizedConfig = R.map(
     R.map(
       R.pipe(
         enhanceIfWithId,
-        assertNotNil
-      )
-    )
+        assertNotNil,
+      ),
+    ),
   ),
-  config
+  config,
 )
 // console.log(normalizedConfig)
 

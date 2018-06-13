@@ -6,7 +6,7 @@ import UglifyJSPlugin from 'uglifyjs-webpack-plugin'
 const prod = [
   new webpack.optimize.OccurrenceOrderPlugin(),
   new UglifyJSPlugin(),
-  new DuplicatePackageCheckerPlugin()
+  new DuplicatePackageCheckerPlugin(),
 ]
 
 export default prod

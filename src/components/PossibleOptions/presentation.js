@@ -1,11 +1,7 @@
 import * as R from 'ramda'
 import React from 'react'
 
-import {
-  FormControl,
-  FormGroup,
-  FormControlLabel,
-} from 'material-ui/Form'
+import { FormControl, FormGroup, FormControlLabel } from 'material-ui/Form'
 import { Checkbox } from 'material-ui'
 
 const PossibleOptions = ({ classes, options, handleSelect }) => (
@@ -15,13 +11,7 @@ const PossibleOptions = ({ classes, options, handleSelect }) => (
         ({ id, value, selected }) => (
           <FormControlLabel
             key={id}
-            control={
-              <Checkbox
-                checked={selected}
-                onChange={handleSelect}
-                value={id}
-              />
-            }
+            control={<Checkbox checked={selected} onChange={handleSelect} value={id} />}
             label={value}
           />
         ),

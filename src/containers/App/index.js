@@ -17,11 +17,7 @@ const enhance = R.compose(
   RE.withState('result', 'setResult', null),
   RE.withHandlers({
     selectOption: ({
-      setOptions,
-      setInvalid,
-      setEmpty,
-      setResult,
-      options,
+      setOptions, setInvalid, setEmpty, setResult, options,
     }) => event => {
       // update selections
       const id = event.target.value
@@ -52,19 +48,17 @@ const enhance = R.compose(
             // ids of normalizedConfig
             R.pipe(
               R.prop('if'),
-              R.map(R.prop('id'))
+              R.map(R.prop('id')),
             ),
 
             // TODO: sortStrings - to ramda-adjunct
             // trace('asdf'),
-            R.sort((a, b) => {
-              return a.localeCompare(b)
-            }),
+            R.sort((a, b) => a.localeCompare(b)),
             // trace('asdf2'),
             R.equals(selectedIfsIds),
           ),
         ),
-        R.prop('then')
+        R.prop('then'),
       )(normalizedConfig)
       // console.log(then)
 
@@ -72,14 +66,12 @@ const enhance = R.compose(
         setInvalid(false)
         setEmpty(false)
         setResult(then)
+      } else if (selectedIfsIds.length == 0) {
+        setInvalid(false)
+        setEmpty(true)
       } else {
-        if (selectedIfsIds.length == 0) {
-          setInvalid(false)
-          setEmpty(true)
-        } else {
-          setInvalid(true)
-          setEmpty(false)
-        }
+        setInvalid(true)
+        setEmpty(false)
       }
     },
   }),

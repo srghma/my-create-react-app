@@ -14,17 +14,12 @@
     "crx:compress": "crx pack build -p key.pem -o app.crx",
     "crx:compress-keygen": "crx keygen",
     "clean": "rimraf build/ dev/ *.zip *.crx",
-    "lint": "eslint --ignore-path .eslintignore .",
-    "lint:fix": "eslint --ignore-path .eslintignore --fix .",
-    "format:base": "prettier --config './.prettierrc.yaml' --ignore-path './.eslintignore' --write",
-    "format": "npm run format:base './**/*.{js,jsx,json}'",
-    "format-fix": "npm run format && npm run lint:fix",
+    "format": "prettier-eslint --config .prettierrc.yaml --eslint-config-path .eslintrc.js --eslint-ignore --write './**/*.{js,jsx,json}'",
     "precommit": "lint-staged"
   },
   "lint-staged": {
     "*.js": [
-      "npm run format:base",
-      "eslint --ignore-path .eslintignore --fix",
+      "prettier-eslint --config .prettierrc.yaml --eslint-config-path .eslintrc.js --eslint-ignore --write",
       "git add"
     ]
   },
@@ -104,6 +99,7 @@
     "eslint-import-resolver-node": "^0.3.2",
     "lodash.debounce": "^4.0.8",
     "material-ui": "^1.0.0-beta.43",
+    "prettier-eslint-cli": "^4.7.1",
     "prop-types": "^15.6.1",
     "ramda": "^0.25.0",
     "ramda-adjunct": "^2.9.0",

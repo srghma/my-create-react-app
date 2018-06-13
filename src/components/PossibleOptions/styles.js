@@ -1,2 +1,1 @@
-export default css`
-`
+export default css``

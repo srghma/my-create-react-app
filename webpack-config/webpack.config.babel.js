@@ -19,9 +19,9 @@ const config = {
       '/',
 
       // becuase its published on https://srghma.github.io/my-create-react-app/
-      '/my-create-react-app/'
+      '/my-create-react-app/',
     ),
-    filename:   'bundle.js',
+    filename: 'bundle.js',
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
