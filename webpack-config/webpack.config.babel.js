@@ -1,7 +1,5 @@
 import { join } from 'path'
 
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin'
-
 import './loadDotenv'
 import { outputDir, env, root } from './lib'
 import module_ from './chunks/module'
