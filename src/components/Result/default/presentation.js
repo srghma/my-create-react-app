@@ -12,14 +12,15 @@ const Default = ({ classes, result }) => (
         </TableRow>
       </TableHead>
       <TableBody>
-        {mapIndexed(
-          (name, i) => (
+        {mapIndexed(({ value, excluding_contract }, i) => {
+          const message = excluding_contract ? `${value} (виключно контракт)` : value
+
+          return (
             <TableRow key={i}>
-              <TableCell className={classes.cell}>{name}</TableCell>
+              <TableCell className={classes.cell}>{message}</TableCell>
             </TableRow>
-          ),
-          result,
-        )}
+          )
+        }, result)}
       </TableBody>
     </Table>
   </Grid>

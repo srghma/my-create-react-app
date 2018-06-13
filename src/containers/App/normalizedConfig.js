@@ -33,3 +33,4 @@ export const normalizedConfig = R.map(
 
 // [{ id: String, value: String, selected: Bool }]
 export const stateOfCheckboxOptions = R.map(x => ({ ...x, selected: false }), possibleIfsWithId)
+// console.log(stateOfCheckboxOptions)
