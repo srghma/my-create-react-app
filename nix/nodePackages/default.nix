@@ -122,6 +122,8 @@
     debug_2-6-9 = callPackage ./debug/2.6.9.nix {};
     decamelize = callPackage ./decamelize/1.2.0.nix {};
     decamelize_1-2-0 = callPackage ./decamelize/1.2.0.nix {};
+    deep-diff = callPackage ./deep-diff/0.3.8.nix {};
+    deep-diff_0-3-8 = callPackage ./deep-diff/0.3.8.nix {};
     deep-is = callPackage ./deep-is/0.1.3.nix {};
     deep-is_0-1-3 = callPackage ./deep-is/0.1.3.nix {};
     deepmerge = callPackage ./deepmerge/2.1.1.nix {};
