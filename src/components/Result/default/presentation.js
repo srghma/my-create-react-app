@@ -12,8 +12,8 @@ const Default = ({ classes, result }) => (
         </TableRow>
       </TableHead>
       <TableBody>
-        {mapIndexed(({ value, excluding_contract }, i) => {
-          const message = excluding_contract ? `${value} (виключно контракт)` : value
+        {mapIndexed(({ speciality, excluding_contract }, i) => {
+          const message = excluding_contract ? `${speciality} (виключно контракт)` : speciality
 
           return (
             <TableRow key={i}>

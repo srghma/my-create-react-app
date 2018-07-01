@@ -1,17 +1,26 @@
 import * as R from 'ramda'
+import * as RA from 'ramda-adjunct'
 import * as RE from 'recompose'
 import { wrapWithComponent } from 'srghma-react-helpers'
 // import { trace } from 'ramda-universal-trace'
 
-import { lensId, filterSelected, switchSelected } from './utils'
-import { stateOfCheckboxOptions, normalizedConfig } from './normalizedConfig'
+import { allSubjects, config } from '../../config/specialities'
+
+import {
+  findMatchingSpecialities,
+  lensOptionsValueEq,
+  optionsFilterSelected,
+  optionSwitchSelected
+} from './utils'
 
 import Default from './default'
 import Wrapper from './wrapper'
 
+const allSubjectsWithSelected = R.map(x => ({ value: x, selected: false }), allSubjects)
+
 const enhance = R.compose(
   wrapWithComponent(Wrapper),
-  RE.withState('options', 'setOptions', stateOfCheckboxOptions),
+  RE.withState('options', 'setOptions', allSubjectsWithSelected),
   RE.withState('empty', 'setEmpty', true),
   RE.withState('invalid', 'setInvalid', false),
   RE.withState('result', 'setResult', null),
@@ -20,58 +29,34 @@ const enhance = R.compose(
       setOptions, setInvalid, setEmpty, setResult, options,
     }) => event => {
       // update selections
-      const id = event.target.value
-      // console.log('id', id)
-      // console.log('options', options)
+      const value = event.target.value
 
-      const options_ = R.over(lensId(id), switchSelected, options)
-      // console.log('options_', options_)
+      const options_ = R.over(lensOptionsValueEq(value), optionSwitchSelected, options)
 
-      // force return if occurs that more then 4 selected
-      if (filterSelected(options_).length > 4) {
-        return
-      }
+      // dont select if more then 3 selected
+      const selectedOptions =  optionsFilterSelected(options_)
+      if (selectedOptions.length > 3) { return }
 
       setOptions(options_)
 
-      // calculate result
-      const selectedIfsIds = R.pipe(
-        filterSelected,
-        R.map(R.prop('id')),
-      )(options_)
-
-      // console.log('selectedIfsIds', selectedIfsIds)
-
-      const then = R.pipe(
-        R.find(
-          R.pipe(
-            // ids of normalizedConfig
-            R.pipe(
-              R.prop('if'),
-              R.map(R.prop('id')),
-            ),
-
-            // TODO: sortStrings - to ramda-adjunct
-            // trace('asdf'),
-            R.sort((a, b) => a.localeCompare(b)),
-            // trace('asdf2'),
-            R.equals(selectedIfsIds),
-          ),
-        ),
-        R.prop('then'),
-      )(normalizedConfig)
-      // console.log(then)
-
-      if (then) {
-        setInvalid(false)
-        setEmpty(false)
-        setResult(then)
-      } else if (selectedIfsIds.length == 0) {
+      if (selectedOptions.length == 0) {
         setInvalid(false)
         setEmpty(true)
-      } else {
+        return
+      }
+
+      // find speciality by matching matters
+      const selectedMatters = R.map(R.prop('value'), selectedOptions)
+
+      const specialities = findMatchingSpecialities(config, selectedMatters)
+
+      if (specialities.length == 0) {
         setInvalid(true)
         setEmpty(false)
+      } else {
+        setInvalid(false)
+        setEmpty(false)
+        setResult(specialities)
       }
     },
   }),

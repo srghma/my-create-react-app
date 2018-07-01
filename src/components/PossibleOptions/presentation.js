@@ -8,10 +8,10 @@ const PossibleOptions = ({ classes, options, handleSelect }) => (
   <FormControl>
     <FormGroup>
       {R.map(
-        ({ id, value, selected }) => (
+        ({ value, selected }) => (
           <FormControlLabel
-            key={id}
-            control={<Checkbox checked={selected} onChange={handleSelect} value={id} />}
+            key={value}
+            control={<Checkbox checked={selected} onChange={handleSelect} value={value} />}
             label={value}
           />
         ),
