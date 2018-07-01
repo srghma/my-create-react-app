@@ -4,11 +4,6 @@ let
   nixLib = import /home/srghma/projects/my-create-react-app/nix {
     inherit pkgs nodejs;
   };
-
-  project = nixLib.callPackage ./project.nix {};
-
 in
-  project.override (attrs: rec {
-    deps = nixLib.nodePackages;
-  })
+  nixLib.callPackage ./project.nix { includeDevDependencies = true; }
 

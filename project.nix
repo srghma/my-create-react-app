@@ -1,5 +1,6 @@
-{ buildNodePackage, namespaces, nodePackages, pkgs }:
+{ buildNodePackage, namespaces, nodePackages, pkgs, includeDevDependencies ? false }:
 buildNodePackage {
+    inherit includeDevDependencies;
     name = "my-create-react-app";
     version = "0.0.1";
     src = ./.;
