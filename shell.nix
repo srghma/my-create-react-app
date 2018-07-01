@@ -1,18 +1,14 @@
-{ pkgs ? import <nixpkgs> {} }:
-
-with pkgs;
+{ nodejs ? pkgs.nodejs-8_x, pkgs ? import <nixpkgs> {} }:
 
 let
-  f = import ./.;
-  drv = callPackage f {};
+  nixLib = import /home/srghma/projects/my-create-react-app/nix {
+    inherit pkgs nodejs;
+  };
+
+  project = nixLib.callPackage ./project.nix {};
 
 in
-drv.gems.env.overrideAttrs (attrs: rec {
-  buildInputs = [
-    git
-    libxml2
-    libxslt
-    pkgconfig
-    bundix
-  ];
-})
+  project.override (attrs: rec {
+    deps = nixLib.nodePackages;
+  })
+
