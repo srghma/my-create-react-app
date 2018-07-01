@@ -10,10 +10,7 @@
   "scripts": {
     "dev": "node scripts/dev",
     "build": "node scripts/build",
-    "crx:unsigned-zip": "crx pack build --zip-output app.zip",
-    "crx:compress": "crx pack build -p key.pem -o app.crx",
-    "crx:compress-keygen": "crx keygen",
-    "clean": "rimraf build/ dev/ *.zip *.crx",
+    "clean": "rimraf docs/",
     "format": "prettier-eslint --config .prettierrc.yaml --eslint-config-path .eslintrc.js --eslint-ignore --write './**/*.{js,jsx,json}'",
     "precommit": "lint-staged"
   },
@@ -46,7 +43,6 @@
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
     "cross-env": "^5.2.0",
-    "crx": "^3.2.1",
     "css-loader": "^0.28.11",
     "css-modules-require-hook": "^4.2.3",
     "dotenv": "^6.0.0",
