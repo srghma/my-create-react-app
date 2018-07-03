@@ -1,10 +1,10 @@
 { buildNodePackage, nodePackages, pkgs }:
 buildNodePackage {
     name = "react-jss";
-    version = "8.5.1";
+    version = "8.6.0";
     src = pkgs.fetchurl {
-      url = "https://registry.npmjs.org/react-jss/-/react-jss-8.5.1.tgz";
-      sha1 = "f97c72f6a1c86aa6408932a2a2836ce40c0ab9fc";
+      url = "https://registry.npmjs.org/react-jss/-/react-jss-8.6.0.tgz";
+      sha1 = "6d2a1a5ebaa45afa6a71cc504c53a26dd2ac8447";
     };
     deps = with nodePackages; [
       theming_1-3-0

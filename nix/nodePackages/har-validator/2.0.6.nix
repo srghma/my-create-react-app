@@ -8,7 +8,7 @@ buildNodePackage {
     };
     deps = with nodePackages; [
       is-my-json-valid_2-17-2
-      commander_2-15-1
+      commander_2-16-0
       chalk_1-1-3
       pinkie-promise_2-0-1
     ];

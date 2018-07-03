@@ -1,10 +1,10 @@
 { buildNodePackage, nodePackages, pkgs }:
 buildNodePackage {
     name = "commander";
-    version = "2.15.1";
+    version = "2.16.0";
     src = pkgs.fetchurl {
-      url = "https://registry.npmjs.org/commander/-/commander-2.15.1.tgz";
-      sha1 = "df46e867d0fc2aec66a34662b406a9ccafff5b0f";
+      url = "https://registry.npmjs.org/commander/-/commander-2.16.0.tgz";
+      sha1 = "f16390593996ceb4f3eeb020b31d78528f7f8a50";
     };
     deps = [];
     meta = {

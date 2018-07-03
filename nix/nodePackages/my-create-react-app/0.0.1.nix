@@ -40,7 +40,7 @@ buildNodePackage {
       babel-plugin-direct-import_0-6-0-beta-1
       namespaces.babel.plugin-transform-runtime_7-0-0-beta-51
       namespaces.babel.plugin-external-helpers_7-0-0-beta-51
-      eslint-plugin-jsx-a11y_6-0-3
+      eslint-plugin-jsx-a11y_6-1-0
       html-webpack-plugin_3-2-0
       sass-loader_7-0-3
       cross-env_5-2-0

@@ -7,7 +7,7 @@ buildNodePackage {
       sha1 = "17293ee75efdd08c6d1c8b3e1749d2d5757cf42b";
     };
     deps = with nodePackages; [
-      commander_2-15-1
+      commander_2-16-0
       node-rsa_0-2-30
       archiver_1-3-0
       es6-promise_3-3-1

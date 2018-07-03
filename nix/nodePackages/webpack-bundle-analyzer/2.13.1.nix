@@ -10,7 +10,7 @@ buildNodePackage {
       ws_4-1-0
       ejs_2-6-1
       lodash_4-17-10
-      commander_2-15-1
+      commander_2-16-0
       mkdirp_0-5-1
       gzip-size_4-1-0
       chalk_2-4-1

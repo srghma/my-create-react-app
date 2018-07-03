@@ -13,7 +13,7 @@ buildNodePackage {
       toposort_1-0-7
       util-promisify_1-0-0
       tapable_1-0-0
-      html-minifier_3-5-17
+      html-minifier_3-5-18
     ];
     meta = {
       homepage = "https://github.com/jantimon/html-webpack-plugin";

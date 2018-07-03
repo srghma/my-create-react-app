@@ -1,10 +1,10 @@
 { buildNodePackage, nodePackages, pkgs }:
 buildNodePackage {
     name = "ajv";
-    version = "6.5.1";
+    version = "6.5.2";
     src = pkgs.fetchurl {
-      url = "https://registry.npmjs.org/ajv/-/ajv-6.5.1.tgz";
-      sha1 = "88ebc1263c7133937d108b80c5572e64e1d9322d";
+      url = "https://registry.npmjs.org/ajv/-/ajv-6.5.2.tgz";
+      sha1 = "678495f9b82f7cca6be248dd92f59bff5e1f4360";
     };
     deps = with nodePackages; [
       uri-js_4-2-2

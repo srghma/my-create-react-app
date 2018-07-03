@@ -8,7 +8,7 @@ buildNodePackage {
     };
     deps = with nodePackages; [
       ajv-keywords_3-2-0
-      ajv_6-5-1
+      ajv_6-5-2
     ];
     meta = {
       homepage = "https://github.com/webpack-contrib/schema-utils";

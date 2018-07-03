@@ -15,13 +15,13 @@ buildNodePackage {
       jss-props-sort_6-0-0
       jss-default-unit_8-0-2
       recompose_0-27-1
-      react-transition-group_2-3-1
+      react-transition-group_2-4-0
       namespaces.babel.runtime_7-0-0-beta-51
       keycode_2-2-0
       react-event-listener_0-5-9
       deepmerge_2-1-1
       react-popper_0-10-4
-      react-jss_8-5-1
+      react-jss_8-6-0
       dom-helpers_3-3-1
       jss-camel-case_6-1-0
       react-lifecycles-compat_3-0-4

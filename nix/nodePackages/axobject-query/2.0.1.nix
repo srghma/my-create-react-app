@@ -1,10 +1,10 @@
 { buildNodePackage, nodePackages, pkgs }:
 buildNodePackage {
     name = "axobject-query";
-    version = "0.1.0";
+    version = "2.0.1";
     src = pkgs.fetchurl {
-      url = "https://registry.npmjs.org/axobject-query/-/axobject-query-0.1.0.tgz";
-      sha1 = "62f59dbc59c9f9242759ca349960e7a2fe3c36c0";
+      url = "https://registry.npmjs.org/axobject-query/-/axobject-query-2.0.1.tgz";
+      sha1 = "05dfa705ada8ad9db993fa6896f22d395b0b0a07";
     };
     deps = with nodePackages; [
       ast-types-flow_0-0-7

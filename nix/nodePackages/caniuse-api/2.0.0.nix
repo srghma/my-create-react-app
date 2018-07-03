@@ -9,7 +9,7 @@ buildNodePackage {
     deps = with nodePackages; [
       browserslist_2-11-3
       lodash-memoize_4-1-2
-      caniuse-lite_1-0-30000861
+      caniuse-lite_1-0-30000862
       lodash-uniq_4-5-0
     ];
     meta = {

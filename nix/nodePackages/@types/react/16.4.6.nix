@@ -1,10 +1,10 @@
 { buildNodePackage, fetchUrlNamespaced, namespaceTokens, nodePackages, pkgs }:
 buildNodePackage {
     name = "react";
-    version = "16.4.1";
+    version = "16.4.6";
     src = fetchUrlNamespaced {
-      url = "https://registry.npmjs.org/@types/react/-/react-16.4.1.tgz";
-      sha1 = "c53bbfb4a78933db587da085ac60dbf5fcf73f8f";
+      url = "https://registry.npmjs.org/@types/react/-/react-16.4.6.tgz";
+      sha1 = "5024957c6bcef4f02823accf5974faba2e54fada";
       namespace = "types";
     };
     namespace = "types";

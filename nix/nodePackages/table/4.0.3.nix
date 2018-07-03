@@ -9,7 +9,7 @@ buildNodePackage {
     deps = with nodePackages; [
       lodash_4-17-10
       ajv-keywords_3-2-0
-      ajv_6-5-1
+      ajv_6-5-2
       chalk_2-4-1
       string-width_2-1-1
       slice-ansi_1-0-0

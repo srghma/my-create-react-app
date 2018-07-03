@@ -1,17 +1,17 @@
 { buildNodePackage, nodePackages, pkgs }:
 buildNodePackage {
     name = "html-minifier";
-    version = "3.5.17";
+    version = "3.5.18";
     src = pkgs.fetchurl {
-      url = "https://registry.npmjs.org/html-minifier/-/html-minifier-3.5.17.tgz";
-      sha1 = "fe9834c4288e4d5b4dfe18fbc7f3f811c108e5ea";
+      url = "https://registry.npmjs.org/html-minifier/-/html-minifier-3.5.18.tgz";
+      sha1 = "fc8b02826cbbafc6de19a103c41c830a91cffe5a";
     };
     deps = with nodePackages; [
       param-case_2-1-1
       relateurl_0-2-7
-      commander_2-15-1
+      commander_2-16-0
       clean-css_4-1-11
-      uglify-js_3-4-2
+      uglify-js_3-4-3
       he_1-1-1
       camel-case_3-0-0
     ];

@@ -10,7 +10,7 @@ buildNodePackage {
       is-zip_1-0-0
       strip-dirs_1-1-1
       through2_2-0-3
-      yauzl_2-9-2
+      yauzl_2-10-0
       stat-mode_0-2-2
       vinyl_1-2-0
       read-all-stream_3-1-0

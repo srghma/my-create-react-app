@@ -9,10 +9,10 @@ buildNodePackage {
     deps = with nodePackages; [
       lodash_4-17-10
       find-parent-dir_0-3-0
-      please-upgrade-node_3-0-2
+      please-upgrade-node_3-1-0
       is-windows_1-0-2
       listr_0-14-1
-      commander_2-15-1
+      commander_2-16-0
       debug_3-1-0
       cosmiconfig_5-0-5
       micromatch_3-1-10

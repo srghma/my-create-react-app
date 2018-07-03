@@ -11,14 +11,14 @@ buildNodePackage {
       loglevel-colored-level-prefix_1-0-0
       dlv_1-1-2
       eslint_4-19-1
-      typescript-eslint-parser_16-0-0
+      typescript-eslint-parser_16-0-1
       babel-runtime_6-26-0
       lodash-merge_4-6-1
       indent-string_3-2-0
       typescript_2-9-2
-      pretty-format_23-0-1
+      pretty-format_23-2-0
       vue-eslint-parser_2-0-3
-      prettier_1-13-5
+      prettier_1-13-7
       common-tags_1-8-0
     ];
     meta = {

@@ -9,7 +9,7 @@ buildNodePackage {
     };
     namespace = "types";
     deps = with nodePackages; [
-      namespaces.types.react_16-4-1
+      namespaces.types.react_16-4-6
     ];
     devDependencies = [];
     meta = {

@@ -25,7 +25,7 @@ buildNodePackage {
       strip-json-comments_2-0-1
       espree_4-0-0
       progress_2-0-0
-      ajv_6-5-1
+      ajv_6-5-2
       chalk_2-4-1
       regexpp_1-1-0
       file-entry-cache_2-0-0

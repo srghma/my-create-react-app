@@ -12,7 +12,7 @@ buildNodePackage {
       strip-ansi_4-0-0
       text-table_0-2-0
       ajv-keywords_3-2-0
-      ajv_6-5-1
+      ajv_6-5-2
       chalk_2-4-1
       webpack-log_1-2-0
     ];

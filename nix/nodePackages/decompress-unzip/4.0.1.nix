@@ -8,7 +8,7 @@ buildNodePackage {
     };
     deps = with nodePackages; [
       file-type_3-9-0
-      yauzl_2-9-2
+      yauzl_2-10-0
       pify_2-3-0
       get-stream_2-3-1
     ];

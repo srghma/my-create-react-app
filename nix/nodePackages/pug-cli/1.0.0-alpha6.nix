@@ -7,7 +7,7 @@ buildNodePackage {
       sha1 = "1ca539ea4ac0ebb69ce4aae84aeed5d64ffe6501";
     };
     deps = with nodePackages; [
-      commander_2-15-1
+      commander_2-16-0
       mkdirp_0-5-1
       pug_2-0-3
       chalk_1-1-3

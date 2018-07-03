@@ -7,7 +7,7 @@ buildNodePackage {
       sha1 = "45355248a88979034b6792e19bb81f2b7975dd0d";
     };
     deps = with nodePackages; [
-      is-callable_1-1-3
+      is-callable_1-1-4
       is-symbol_1-0-1
       is-date-object_1-0-1
     ];

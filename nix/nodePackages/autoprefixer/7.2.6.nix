@@ -8,7 +8,7 @@ buildNodePackage {
     };
     deps = with nodePackages; [
       browserslist_2-11-3
-      caniuse-lite_1-0-30000861
+      caniuse-lite_1-0-30000862
       num2fraction_1-2-2
       normalize-range_0-1-2
       postcss-value-parser_3-3-0

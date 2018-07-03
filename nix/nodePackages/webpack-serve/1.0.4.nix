@@ -22,7 +22,7 @@ buildNodePackage {
       koa_2-5-1
       find-up_2-1-0
       import-local_1-0-0
-      namespaces.webpack-contrib.config-loader_1-1-3
+      namespaces.webpack-contrib.config-loader_1-2-1
       namespaces.shellscape.koa-static_4-0-5
       loud-rejection_1-6-0
       update-notifier_2-5-0

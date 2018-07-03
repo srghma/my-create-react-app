@@ -8,7 +8,7 @@ buildNodePackage {
     };
     deps = with nodePackages; [
       which_1-3-1
-      commander_2-15-1
+      commander_2-16-0
       npm-path_2-0-4
     ];
     meta = {

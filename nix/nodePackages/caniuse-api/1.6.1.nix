@@ -8,7 +8,7 @@ buildNodePackage {
     };
     deps = with nodePackages; [
       browserslist_1-7-7
-      caniuse-db_1-0-30000861
+      caniuse-db_1-0-30000862
       lodash-memoize_4-1-2
       lodash-uniq_4-5-0
     ];

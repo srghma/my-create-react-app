@@ -20,13 +20,13 @@ buildNodePackage {
       loader-utils_1-1-0
       json-parse-better-errors_1-0-2
       schema-utils_0-4-5
-      ajv_6-5-1
+      ajv_6-5-2
       namespaces.webassemblyjs.wasm-parser_1-5-12
       eslint-scope_3-7-1
       tapable_1-0-0
       enhanced-resolve_4-1-0
       node-libs-browser_2-1-0
-      uglifyjs-webpack-plugin_1-2-6
+      uglifyjs-webpack-plugin_1-2-7
       acorn_5-7-1
       namespaces.webassemblyjs.wasm-edit_1-5-12
       webpack-sources_1-1-0

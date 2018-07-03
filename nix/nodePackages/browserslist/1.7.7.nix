@@ -7,7 +7,7 @@ buildNodePackage {
       sha1 = "0bd76704258be829b2398bb50e4b62d1a166b0b9";
     };
     deps = with nodePackages; [
-      caniuse-db_1-0-30000861
+      caniuse-db_1-0-30000862
       electron-to-chromium_1-3-50
     ];
     meta = {

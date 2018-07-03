@@ -7,7 +7,7 @@ buildNodePackage {
       sha1 = "9dbbdd27c6856f0001421ca18782d786bf8a6165";
     };
     deps = with nodePackages; [
-      is-callable_1-1-3
+      is-callable_1-1-4
       is-regex_1-0-4
       es-to-primitive_1-1-1
       function-bind_1-1-1
