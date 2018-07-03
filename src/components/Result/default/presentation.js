@@ -1,5 +1,7 @@
 import React from 'react'
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table'
+import Table, {
+  TableBody, TableCell, TableHead, TableRow,
+} from 'material-ui/Table'
 import { Grid } from 'material-ui'
 import { mapIndexed } from 'srghma-react-helpers'
 
@@ -8,16 +10,35 @@ const Default = ({ classes, result }) => (
     <Table>
       <TableHead>
         <TableRow>
-          <TableCell className={classes.header}>Назва спеціальності</TableCell>
+          <TableCell className={classes.header}>
+Назва спеціальності
+          </TableCell>
+          <TableCell className={classes.header}>
+Min
+          </TableCell>
         </TableRow>
       </TableHead>
       <TableBody>
-        {mapIndexed(({ speciality, excluding_contract }, i) => {
-          const message = excluding_contract ? `${speciality} (виключно контракт)` : speciality
+        {mapIndexed(({ speciality, excluding_contract, min_score }, i) => {
+          const excluding_contract_ = excluding_contract ? (
+            <p className={classes.excluding_contract_hint}>
+(виключно контракт)
+            </p>
+          ) : null
 
           return (
             <TableRow key={i}>
-              <TableCell className={classes.cell}>{message}</TableCell>
+              <TableCell className={classes.cell}>
+                <div className={classes.speciality_name}>
+                  {speciality}
+                </div>
+                {excluding_contract_}
+              </TableCell>
+              <TableCell className={classes.cell}>
+                <div className={classes.min_score_hint}>
+                  {min_score}
+                </div>
+              </TableCell>
             </TableRow>
           )
         }, result)}
