@@ -2,7 +2,7 @@ import React from 'react'
 import { Grid } from 'material-ui'
 
 import PossibleOptions from 'components/PossibleOptions'
-import Result from 'components/Result'
+import Result from 'containers/SelectSpecialityResult'
 
 const App = ({
   classes, options, empty, invalid, result, selectOption,

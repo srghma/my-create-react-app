@@ -5,7 +5,7 @@ import Table, {
 import { Grid } from 'material-ui'
 import { mapIndexed } from 'srghma-react-helpers'
 
-const Default = ({ classes, result }) => (
+const Default = ({ classes, result, onSpecialitySelect }) => (
   <Grid container style={{ maxHeight: '500px', overflow: 'auto' }}>
     <Table>
       <TableHead>
@@ -22,12 +22,12 @@ const Default = ({ classes, result }) => (
         {mapIndexed(({ speciality, excluding_contract, min_score }, i) => {
           const excluding_contract_ = excluding_contract ? (
             <p className={classes.excluding_contract_hint}>
-(виключно контракт)
+              (виключно контракт)
             </p>
           ) : null
 
           return (
-            <TableRow key={i}>
+            <TableRow key={i} onClick={() => onSpecialitySelect(speciality)}>
               <TableCell className={classes.cell}>
                 <div className={classes.speciality_name}>
                   {speciality}
