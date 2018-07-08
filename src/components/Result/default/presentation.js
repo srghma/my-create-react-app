@@ -11,10 +11,10 @@ const Default = ({ classes, result }) => (
       <TableHead>
         <TableRow>
           <TableCell className={classes.header}>
-Назва спеціальності
+            Назва спеціальності
           </TableCell>
           <TableCell className={classes.header}>
-Min
+            Прохідний бал
           </TableCell>
         </TableRow>
       </TableHead>
