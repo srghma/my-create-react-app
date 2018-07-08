@@ -2,7 +2,7 @@ import * as R from 'ramda'
 import * as RA from 'ramda-adjunct'
 import * as RE from 'recompose'
 import { mapSelectors, bindActionCreators } from 'srghma-react-helpers'
-import { withStyles } from 'material-ui'
+import { withStyles } from '@material-ui/core'
 import { connect } from 'react-redux'
 
 import * as selectSpecialityPageActions from 'actions/selectSpecialityPage'
@@ -16,14 +16,14 @@ import {
   findMatchingSpecialities,
   lensSubjectsValueEq,
   subjectsFilterSelected,
-  optionSwitchSelected
+  optionSwitchSelected,
 } from './utils'
 
 const enhance = R.compose(
   withStyles(styles),
   connect(
     mapSelectors(selectSpecialityPageSelectors),
-    bindActionCreators(selectSpecialityPageActions)
+    bindActionCreators(selectSpecialityPageActions),
   ),
   RE.withHandlers({
     onSelectSubject: ({
@@ -32,20 +32,19 @@ const enhance = R.compose(
       setSpecialitiesInvalid,
       setSpecialities,
 
-      subjects
+      subjects,
     }) => event => {
       // update selections
       const value = event.target.value
 
-      const updatedSubjects = R.over(
-        lensSubjectsValueEq(value),
-        optionSwitchSelected,
-        subjects
-      )
+      const updatedSubjects = R.over(lensSubjectsValueEq(value), optionSwitchSelected, subjects)
 
       // dont select if more then 3 selected
-      const selectedSubjects =  subjectsFilterSelected(updatedSubjects)
-      if (selectedSubjects.length > 3) { return }
+      const selectedSubjects = subjectsFilterSelected(updatedSubjects)
+
+      if (selectedSubjects.length > 3) {
+        return
+      }
 
       setSubjects(updatedSubjects)
 

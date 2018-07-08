@@ -1,15 +1,16 @@
 import React from 'react'
-import { Grid } from 'material-ui'
+import { Grid } from '@material-ui/core'
 
-const App = ({
-  classes, options, empty, invalid, result, selectOption,
-}) => (
+import CalculatePassingScoreInput from 'containers/CalculatePassingScoreInput'
+import CalculatePassingScoreOutput from 'containers/CalculatePassingScoreOutput'
+
+const App = () => (
   <Grid container>
     <Grid item xs={6}>
-      asdfasdf
+      <CalculatePassingScoreInput />
     </Grid>
     <Grid item xs={6}>
-      asdfasdf
+      <CalculatePassingScoreOutput />
     </Grid>
   </Grid>
 )

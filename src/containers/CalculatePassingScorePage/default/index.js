@@ -1,5 +1,5 @@
 import * as R from 'ramda'
-import { withStyles } from 'material-ui'
+import { withStyles } from '@material-ui/core'
 
 import presentation from './presentation'
 import styles from './styles'

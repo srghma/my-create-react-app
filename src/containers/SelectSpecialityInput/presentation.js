@@ -1,8 +1,8 @@
 import * as R from 'ramda'
 import React from 'react'
 
-import { FormControl, FormGroup, FormControlLabel } from 'material-ui/Form'
-import { Checkbox } from 'material-ui'
+import { FormControl, FormGroup, FormControlLabel } from '@material-ui/core'
+import { Checkbox } from '@material-ui/core'
 
 const SelectSpecialityInput = ({ classes, subjects, onSelectSubject }) => (
   <FormControl>
@@ -15,7 +15,7 @@ const SelectSpecialityInput = ({ classes, subjects, onSelectSubject }) => (
             label={value}
           />
         ),
-        subjects
+        subjects,
       )}
     </FormGroup>
   </FormControl>

@@ -19,8 +19,8 @@ export const allSubjects = [
 export const config = [
   {
     speciality: 'Міжнародні відносини, суспільні комунікації та регіональні студії',
-    min_score:   198.2,
-    matters: [
+    min_score:  198.2,
+    matters:    [
       ukr_lang,
       in_lang,
       [ist_ukr, math] // [] here means ist_ukr or math

@@ -4,7 +4,7 @@ import CalculatePassingScorePage from 'containers/CalculatePassingScorePage'
 import SelectSpecialityPage from 'containers/SelectSpecialityPage'
 
 export const routes = {
-  SelectSpecialityPage: () => SelectSpecialityPage,
+  SelectSpecialityPage:      () => SelectSpecialityPage,
   CalculatePassingScorePage: () => CalculatePassingScorePage,
 }
 

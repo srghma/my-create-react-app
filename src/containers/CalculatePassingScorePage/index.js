@@ -6,9 +6,6 @@ import { wrapWithComponent } from 'srghma-react-helpers'
 import Default from './default'
 import Wrapper from './wrapper'
 
-const enhance = R.compose(
-  wrapWithComponent(Wrapper)
-)
+const enhance = R.compose(wrapWithComponent(Wrapper))
 
 export default enhance(Default)
-

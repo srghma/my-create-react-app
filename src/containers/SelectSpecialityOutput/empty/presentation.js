@@ -1,5 +1,5 @@
 import React from 'react'
-import { Icon, Grid, Typography } from 'material-ui'
+import { Icon, Grid, Typography } from '@material-ui/core'
 
 const Empty = ({ classes }) => (
   <Grid

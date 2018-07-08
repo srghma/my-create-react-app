@@ -26,10 +26,10 @@ const initialState = {
   specialities: [],
 }
 
-const subjects            = R.lensProp('subjects')
-const specialitiesEmpty   = R.lensProp('specialitiesEmpty')
+const subjects = R.lensProp('subjects')
+const specialitiesEmpty = R.lensProp('specialitiesEmpty')
 const specialitiesInvalid = R.lensProp('specialitiesInvalid')
-const specialities        = R.lensProp('specialities')
+const specialities = R.lensProp('specialities')
 
 const actionsMap = {
   [setSubjects.type]:            stateSetter(subjects),

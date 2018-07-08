@@ -2,7 +2,7 @@ import React from 'react'
 import * as R from 'ramda'
 import * as RE from 'recompose'
 import { connect } from 'react-redux'
-import { Stepper, Step, StepLabel, Button } from 'material-ui'
+import { Stepper, Step, StepLabel, Button } from '@material-ui/core'
 
 import { setPage } from 'actions/page'
 import { routesNames } from 'routes'

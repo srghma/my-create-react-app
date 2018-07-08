@@ -1,6 +1,6 @@
 import * as R from 'ramda'
 import React from 'react'
-import { Icon, Grid, Typography } from 'material-ui'
+import { Icon, Grid, Typography } from '@material-ui/core'
 
 const Invalid = ({ classes }) => (
   <Grid

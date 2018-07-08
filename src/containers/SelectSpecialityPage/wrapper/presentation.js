@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Typography } from 'material-ui'
+import { Grid, Typography } from '@material-ui/core'
 
 const AppWrapper = ({ children, classes }) => (
   <Grid container direction="column" spacing={16}>

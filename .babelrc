@@ -21,7 +21,7 @@
     ["lodash", {
       "id": ["ramda", "ramda-adjunct", "recompose", "srghma-react-helpers"]
     }],
-    ["direct-import", { "modules": ["material-ui"] }]
+    ["direct-import", { "modules": ["@material-ui/core"] }]
   ],
   "env": {
     "development": {

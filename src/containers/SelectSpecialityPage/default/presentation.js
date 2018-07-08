@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid } from 'material-ui'
+import { Grid } from '@material-ui/core'
 
 import SelectSpecialityInput from 'containers/SelectSpecialityInput'
 import SelectSpecialityOutput from 'containers/SelectSpecialityOutput'
