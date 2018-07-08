@@ -1,8 +1,14 @@
-import React from 'react'
-import { Grid } from 'material-ui'
+import * as R from 'ramda'
+import * as RA from 'ramda-adjunct'
+import * as RE from 'recompose'
+import { wrapWithComponent } from 'srghma-react-helpers'
 
-const CalculatePassingScorePage = () => (
-  <div>asdfsdf</div>
+import Default from './default'
+import Wrapper from './wrapper'
+
+const enhance = R.compose(
+  wrapWithComponent(Wrapper)
 )
 
-export default CalculatePassingScorePage
+export default enhance(Default)
+

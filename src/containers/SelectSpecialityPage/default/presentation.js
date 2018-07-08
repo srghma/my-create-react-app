@@ -1,18 +1,16 @@
 import React from 'react'
 import { Grid } from 'material-ui'
 
-import PossibleOptions from 'components/PossibleOptions'
-import Result from 'containers/SelectSpecialityResult'
+import SelectSpecialityInput from 'containers/SelectSpecialityInput'
+import SelectSpecialityOutput from 'containers/SelectSpecialityOutput'
 
-const App = ({
-  classes, options, empty, invalid, result, selectOption,
-}) => (
+const App = () => (
   <Grid container>
     <Grid item xs={6}>
-      <PossibleOptions options={options} handleSelect={selectOption} />
+      <SelectSpecialityInput />
     </Grid>
     <Grid item xs={6}>
-      <Result result={result} empty={empty} invalid={invalid} />
+      <SelectSpecialityOutput />
     </Grid>
   </Grid>
 )

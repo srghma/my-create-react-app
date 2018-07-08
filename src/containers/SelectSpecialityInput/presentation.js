@@ -4,21 +4,21 @@ import React from 'react'
 import { FormControl, FormGroup, FormControlLabel } from 'material-ui/Form'
 import { Checkbox } from 'material-ui'
 
-const PossibleOptions = ({ classes, options, handleSelect }) => (
+const SelectSpecialityInput = ({ classes, subjects, onSelectSubject }) => (
   <FormControl>
     <FormGroup>
       {R.map(
         ({ value, selected }) => (
           <FormControlLabel
             key={value}
-            control={<Checkbox checked={selected} onChange={handleSelect} value={value} />}
+            control={<Checkbox checked={selected} onChange={onSelectSubject} value={value} />}
             label={value}
           />
         ),
-        options,
+        subjects
       )}
     </FormGroup>
   </FormControl>
 )
 
-export default PossibleOptions
+export default SelectSpecialityInput

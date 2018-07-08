@@ -1,7 +1,7 @@
 import * as R from 'ramda'
 import * as RA from 'ramda-adjunct'
 
-export const lensOptionsValueEq = x =>
+export const lensSubjectsValueEq = x =>
   R.lens(
     R.find(R.propEq('value', x)),
     (tmthNew, list) => {
@@ -15,7 +15,7 @@ export const lensOptionsValueEq = x =>
     }
   )
 
-export const optionsFilterSelected = R.filter(R.propEq('selected', true))
+export const subjectsFilterSelected = R.filter(R.propEq('selected', true))
 
 export const optionSwitchSelected = R.over(R.lensProp('selected'), R.not)
 

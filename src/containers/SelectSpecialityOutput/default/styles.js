@@ -19,4 +19,8 @@ export default css`
   min_score_hint {
     float: right;
   }
+
+  speciality_row {
+    cursor: pointer;
+  }
 `
