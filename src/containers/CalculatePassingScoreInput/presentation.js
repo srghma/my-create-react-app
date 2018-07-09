@@ -46,30 +46,30 @@ const CalculatePassingScoreInput = ({
   const { matters, speciality, show_preuniversity_training_courses } = selectedSpecialityConfig
 
   return (
-    <FormControl>
+    <FormControl className={classes.form_control}>
       <FormGroup>
         <div>
-          <FormLabel>{renderLabel(matters[0])}</FormLabel>
+          <FormLabel classes={{ root: classes.form_label }} focused={false}>{renderLabel(matters[0])}</FormLabel>
           <Slider value={zno1Score} min={100} max={200} step={0.5} aria-labelledby="label" onChange={zno1ScoreChange} />
-          <FormHelperText>{zno1Score}</FormHelperText>
+          <FormHelperText classes={{ root: classes.form_helper_text }}>{zno1Score}</FormHelperText>
         </div>
 
         <div>
-          <FormLabel>{renderLabel(matters[1])}</FormLabel>
+          <FormLabel classes={{ root: classes.form_label }} focused={false}>{renderLabel(matters[1])}</FormLabel>
           <Slider value={zno2Score} min={100} max={200} step={0.5} aria-labelledby="label" onChange={zno2ScoreChange} />
-          <FormHelperText>{zno2Score}</FormHelperText>
+          <FormHelperText classes={{ root: classes.form_helper_text }}>{zno2Score}</FormHelperText>
         </div>
 
         <div>
-          <FormLabel>{renderLabel(matters[2])}</FormLabel>
+          <FormLabel classes={{ root: classes.form_label }} focused={false}>{renderLabel(matters[2])}</FormLabel>
           <Slider value={zno3Score} min={100} max={200} step={0.5} aria-labelledby="label" onChange={zno3ScoreChange} />
-          <FormHelperText>{zno3Score}</FormHelperText>
+          <FormHelperText classes={{ root: classes.form_helper_text }}>{zno3Score}</FormHelperText>
         </div>
 
         <div>
-          <FormLabel>Атестат</FormLabel>
+          <FormLabel classes={{ root: classes.form_label }} focused={false}>Атестат</FormLabel>
           <Slider value={academicCertificateAverageScore} min={1} max={12} step={1} aria-labelledby="label" onChange={academicCertificateAverageScoreChange} />
-          <FormHelperText>{academicCertificateAverageScore}</FormHelperText>
+          <FormHelperText classes={{ root: classes.form_helper_text }}>{academicCertificateAverageScore}</FormHelperText>
         </div>
 
         <FormControlLabel
@@ -86,7 +86,7 @@ const CalculatePassingScoreInput = ({
           show_preuniversity_training_courses ?
           (
             <div>
-              <FormLabel>Курси довузівської підготовки</FormLabel>
+              <FormLabel classes={{ root: classes.form_label }} focused={false}>Курси довузівської підготовки</FormLabel>
               <Slider value={preuniversityTrainingCoursesScore} min={100} max={200} step={0.5} aria-labelledby="label" onChange={preuniversityTrainingCoursesScoreChange} />
               <FormHelperText>{preuniversityTrainingCoursesScore}</FormHelperText>
             </div>
