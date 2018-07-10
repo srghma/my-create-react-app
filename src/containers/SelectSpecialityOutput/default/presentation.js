@@ -20,7 +20,7 @@ const SelectSpecialityOutputDefault = ({ classes, specialities, onSpecialityClic
 Назва спеціальності
           </TableCell>
           <TableCell className={classes.header}>
-Прохідний бал
+Прохідний бал на бюджет
           </TableCell>
         </TableRow>
       </TableHead>
